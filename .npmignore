@@ -1,0 +1,4 @@
+coverage/
+CONTRIBUTING.md
+.*
+*.config.js

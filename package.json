@@ -1,0 +1,42 @@
+{
+  "name": "@advanced-rest-client/arc-types",
+  "description": "Types definition for Advanced REST Client. A developer helper library",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "main": "index.d.ts",
+  "module": "index.d.ts",
+  "authors": [
+    "Pawel Psztyc"
+  ],
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/advanced-rest-client/arc-types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/advanced-rest-client/arc-types/issues",
+    "email": "arc@mulesoft.com"
+  },
+  "scripts": {
+    "lint": "tsc",
+    "test": "exit(0)"
+  },
+  "dependencies": {
+    "@advanced-rest-client/arc-models": "^4.0.5",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.1",
+    "husky": "^4.2.5"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "always"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
