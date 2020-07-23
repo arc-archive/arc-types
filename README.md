@@ -17,7 +17,7 @@ npm install --save @advanced-rest-client/arc-types
 ### In a module
 
 ```javascript
-/** @typedef {import('@advanced-rest-client/arc-types').ARCCookie} ARCCookie */
+/** @typedef {import('@advanced-rest-client/arc-types').Cookies.ARCCookie} ARCCookie */
 ```
 
 ## Development
