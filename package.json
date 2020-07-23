@@ -19,7 +19,7 @@
   },
   "scripts": {
     "lint": "tsc",
-    "test": "exit(0)"
+    "test": "karma start --coverage"
   },
   "dependencies": {
     "@advanced-rest-client/arc-models": "^4.0.5",
@@ -28,7 +28,35 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.1",
-    "husky": "^4.2.5"
+    "@open-wc/eslint-config": "^2.0.0",
+    "@open-wc/testing": "^2.5.19",
+    "@open-wc/testing-karma": "^3.4.7",
+    "husky": "^4.2.5",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "lit-element": "^2.3.1",
+    "lit-html": "^1.2.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "test/**/*.js"
+        ],
+        "rules": {
+          "no-console": "off",
+          "no-unused-expressions": "off",
+          "no-plusplus": "off",
+          "no-param-reassing": "off",
+          "class-methods-use-this": "off",
+          "import/no-extraneous-dependencies": "off"
+        }
+      }
+    ]
   },
   "prettier": {
     "singleQuote": true,

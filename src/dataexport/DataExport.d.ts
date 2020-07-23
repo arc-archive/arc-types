@@ -13,7 +13,7 @@ import {
 } from '@advanced-rest-client/arc-models';
 import {
   ARCCookie,
-} from './Cookies';
+} from '../cookies/Cookies';
 
 export declare interface EncryptionOptions {
   /**
