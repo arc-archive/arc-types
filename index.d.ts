@@ -5,5 +5,3 @@ export {
   DataExport,
   Cookies,
 };
-export { SessionCookieEventTypes } from './src/cookies/SessionCookieEventTypes';
-export { DataExportEventTypes } from './src/dataexport/DataExportEventTypes';
