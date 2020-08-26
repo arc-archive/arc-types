@@ -146,6 +146,10 @@ export declare interface ExportArcCookie extends ARCCookie {
    * The object kind
    */
   kind: string;
+  /**
+   * Datastore ID if a data store other than Electron was used.
+   */
+  key?: string;
 }
 
 export declare interface ArcExportObject {
@@ -153,6 +157,10 @@ export declare interface ArcExportObject {
   version: string;
   kind: string;
   loadToWorkspace?: boolean;
+  /**
+   * When true the export object was created with a Electron based cookie storage.
+   */
+  electronCookies?: boolean;
   requests?: ExportArcSavedRequest[];
   history?: ExportArcHistoryRequest[];
   projects?: ExportArcProjects[];
