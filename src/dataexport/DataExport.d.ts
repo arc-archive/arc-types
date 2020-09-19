@@ -79,7 +79,7 @@ export declare interface ArcNativeDataExport {
   history?: boolean | ARCHistoryRequest[];
   hostrules?: boolean | ARCHostRule[];
   projects?: boolean | ARCProject[];
-  saved?: boolean | ARCSavedRequest[];
+  requests?: boolean | ARCSavedRequest[];
   variables?: boolean | ARCVariable[];
   websocketurlhistory?: boolean | ARCWebsocketUrlHistory[];
   urlhistory?: boolean | ARCUrlHistory[];
