@@ -1,19 +1,11 @@
-import {
-  ARCSavedRequest,
-  ARCHistoryRequest,
-  ARCAuthData,
-  ARCWebsocketUrlHistory,
-  ARCHostRule,
-  ARCUrlHistory,
-  ARCVariable,
-  ARCProject,
-  ARCCertificateIndex,
-  ARCClientCertificate,
-  ARCCertificate,
-} from '@advanced-rest-client/arc-models';
-import {
-  ARCCookie,
-} from '../cookies/Cookies';
+import { ARCSavedRequest, ARCHistoryRequest } from '../request/ArcRequest';
+import { ARCAuthData } from '../models/AuthData';
+import { ARCWebsocketUrlHistory, ARCUrlHistory } from '../models/UrlHistory';
+import { ARCHostRule } from '../models/HostRule';
+import { ARCVariable } from '../models/Variable';
+import { ARCProject } from '../models/Project';
+import { ARCCertificateIndex, ARCClientCertificate, Certificate } from '../models/ClientCertificate';
+import { ARCCookie } from '../cookies/Cookies';
 
 export declare interface EncryptionOptions {
   /**
@@ -138,8 +130,8 @@ export declare interface ExportArcHostRule extends ARCHostRule, ExportEntity {}
 export declare interface ExportArcVariable extends ARCVariable, ExportEntity {}
 export declare interface ExportArcAuthData extends ARCAuthData, ExportEntity {}
 export declare interface ExportArcClientCertificateData extends ExportEntity, ARCCertificateIndex {
-  cert?: ARCCertificate | ARCCertificate[];
-  pKey?: ARCCertificate | ARCCertificate[];
+  cert?: Certificate | Certificate[];
+  pKey?: Certificate | Certificate[];
 }
 export declare interface ExportArcCookie extends ARCCookie {
   /**
