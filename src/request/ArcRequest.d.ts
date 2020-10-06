@@ -3,9 +3,27 @@ import { HostRule } from '../models/HostRule';
 import { Entity } from '../models/base';
 
 export declare interface MultipartTransformer {
+  /**
+   * When true a this entry represent a file part
+   */
   isFile: boolean;
+  /**
+   * The name of the filed
+   */
   name: string;
+  /**
+   * Converted value
+   */
   value: string;
+  /**
+   * A content type entered by the user to the text part of the text part input.
+   * This can only be set when `isFile` is false.
+   */
+  type?: string;
+  /**
+   * The original file name used with the part
+   */
+  fileName?: string;
 }
 
 /**
