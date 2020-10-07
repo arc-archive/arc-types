@@ -28,10 +28,6 @@ export declare interface HTTPResponse {
    * The response message
    */
   payload: string|Buffer|ArrayBuffer;
-  /**
-   * The timestamp when the request started
-   */
-  startTime: number;
 }
 
 /**
@@ -40,6 +36,14 @@ export declare interface HTTPResponse {
 export declare interface ResponseRedirects {
   response: HTTPResponse[];
   timings?: RequestTimings;
+  /**
+   * The timestamp when the request was started (before the connection is made)
+   */
+  startTIme: number;
+  /**
+   * The timestamp of when the response ended.
+   */
+  endTime: number;
 }
 
 export declare interface RequestsSize {
@@ -54,18 +58,13 @@ export declare interface RequestsSize {
 }
 
 export declare interface BaseResponse extends HTTPResponse {
-  /**
-   * The HTTP message sent to the server (full message).
-   * Some HTTP clients may not give this information.
-   */
-  httpMessage: string;
+  
 }
 
 /**
  * ARC response object.
  */
 export declare interface Response extends BaseResponse {
-  
   /**
    * The request timings. 
    * Some HTTP clients may not give this information.

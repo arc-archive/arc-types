@@ -49,6 +49,30 @@ export declare interface HTTPRequest {
 }
 
 /**
+ * An interface describing a request made by the HTTP transport.
+ * Each transport used by ARC must return this structure in the response event.
+ * This is not a replacement for the editor request that also has to be returned.
+ * 
+ * Another difference is that this headers contains a final list of headers sent to the 
+ * server, including default headers, content-length, authorization, and so on.
+ */
+export declare interface TransportRequest extends HTTPRequest {
+  /**
+   * The HTTP message sent to the server (full message).
+   * Some HTTP clients may not give this information.
+   */
+  httpMessage: string;
+  /**
+   * The timestamp when the request was started (before the connection is made)
+   */
+  startTIme: number;
+  /**
+   * The timestamp of when the response ended.
+   */
+  endTime: number;
+}
+
+/**
  * ARC request `config` object.
  */
 export declare interface RequestConfig {
@@ -129,7 +153,7 @@ export declare interface ArcBaseRequest extends HTTPRequest {
  * A model of an ARC request that has been stored in the data store
  */
 export declare interface ArcStoredRequest extends ArcBaseRequest {
- /**
+  /**
    * The type of the request stored in the data store.
    * Can be either `saved` or `history` which corresponds
    * to `SavedRequest` and `HistoryRequest` definitions respectively.
