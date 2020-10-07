@@ -23,18 +23,24 @@ export declare interface HTTPResponse {
   /**
    * The response headers
    */
-  headers: string;
+  headers?: string;
   /**
    * The response message
    */
-  payload: string|Buffer|ArrayBuffer;
+  payload?: string|Buffer|ArrayBuffer;
 }
 
 /**
  * An information about a redirect
  */
 export declare interface ResponseRedirect {
-  response: HTTPResponse[];
+  /**
+   * Redirection response
+   */
+  response: HTTPResponse;
+  /**
+   * Redirection timings, if available.
+   */
   timings?: RequestTime;
   /**
    * The timestamp when the request was started (before the connection is made)
