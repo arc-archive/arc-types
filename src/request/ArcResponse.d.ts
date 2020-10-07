@@ -1,7 +1,7 @@
 /**
  * Schema definition for ARC request timings. This is mostly consistent with HAR timings.
  */
-export declare interface RequestTimings {
+export declare interface RequestTime {
   connect: number;
   receive: number;
   send: number;
@@ -33,9 +33,9 @@ export declare interface HTTPResponse {
 /**
  * An information about a redirect
  */
-export declare interface ResponseRedirects {
+export declare interface ResponseRedirect {
   response: HTTPResponse[];
-  timings?: RequestTimings;
+  timings?: RequestTime;
   /**
    * The timestamp when the request was started (before the connection is made)
    */
@@ -69,7 +69,7 @@ export declare interface Response extends BaseResponse {
    * The request timings. 
    * Some HTTP clients may not give this information.
    */
-  timings?: RequestTimings;
+  timings?: RequestTime;
   /**
    * The total loading time (from sending the request to receive last byte)
    */
@@ -77,7 +77,7 @@ export declare interface Response extends BaseResponse {
   /**
    * The list of redirects, if any.
    */
-  redirects?: ResponseRedirects[];
+  redirects?: ResponseRedirect[];
   /**
    * Request and response size. Some HTTP clients may not give this information.
    */
