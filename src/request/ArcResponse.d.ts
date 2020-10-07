@@ -39,7 +39,7 @@ export declare interface ResponseRedirect {
   /**
    * The timestamp when the request was started (before the connection is made)
    */
-  startTIme: number;
+  startTime: number;
   /**
    * The timestamp of when the response ended.
    */
