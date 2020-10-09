@@ -15,6 +15,7 @@ import * as RestApi from './src/models/RestApi';
 import * as UrlHistory from './src/models/UrlHistory';
 import * as Variable from './src/models/Variable';
 import * as ApiTypes from './src/models/ApiTypes';
+import * as HistoryData from './src/request/HistoryData';
 
 export {
   DataExport,
@@ -34,4 +35,5 @@ export {
   UrlHistory,
   Variable,
   ApiTypes,
+  HistoryData,
 };
