@@ -1,6 +1,8 @@
 import { LegacyAuth, BasicAuthorization, BearerAuthorization, NtlmAuthorization, DigestAuthorization, OAuth1Authorization, OAuth2Authorization, CCAuthorization } from '../authorization/Authorization';
 import { HostRule } from '../models/HostRule';
 import { Entity } from '../models/base';
+import { Response } from './ArcResponse';
+import { LegacyResponse, LegacyResponseMeta } from './Legacy';
 
 export declare interface MultipartTransformer {
   /**
@@ -147,6 +149,25 @@ export declare interface ArcBaseRequest extends HTTPRequest {
    * Request authorization configuration
    */
   authorization?: RequestAuthorization[];
+  /**
+   * The last response made with this request. This is always set with the history object.
+   * May not be set with others.
+   */
+  response?: Response;
+  /**
+   * Old ARC's response declaration. This is kept for internal data model processing. 
+   * @deprecated Do not use.
+   */
+  _response?: LegacyResponse;
+  /**
+   * Old ARC's response meta declaration. This is kept for internal data model processing. 
+   * @deprecated Do not use.
+   */
+  _responseMeta?: LegacyResponseMeta;
+  /**
+   * @deprecated Do not use.
+   */
+  _isErrorResponse?: boolean;
 }
 
 /**
