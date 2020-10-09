@@ -11,6 +11,21 @@ export declare interface RequestTime {
   ssl?: number;
 }
 
+/**
+ * ARC transforms response body from ArrayBuffer or Buffer
+ * to this structure to store it in the data store.
+ */
+export declare interface TransformedPayload {
+  /**
+   * The type of the original data typ
+   */
+  type: string;
+  /**
+   * Array of integers to be restored to its original form defined in the `type`.
+   */
+  data: number[];
+}
+
 export declare interface HTTPResponse {
   /**
    * The response status code
@@ -27,7 +42,7 @@ export declare interface HTTPResponse {
   /**
    * The response message
    */
-  payload?: string|Buffer|ArrayBuffer;
+  payload?: string|Buffer|ArrayBuffer|TransformedPayload;
 }
 
 /**
