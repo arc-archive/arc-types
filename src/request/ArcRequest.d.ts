@@ -3,6 +3,7 @@ import { HostRule } from '../models/HostRule';
 import { Entity } from '../models/base';
 import { Response } from './ArcResponse';
 import { LegacyResponse, LegacyResponseMeta } from './Legacy';
+import { ApiType } from '../models/ApiTypes';
 
 export declare interface MultipartTransformer {
   /**
@@ -132,6 +133,58 @@ export declare interface RequestAuthorization {
   enabled: boolean;
 }
 
+export declare interface BodyMeta {
+  /**
+   * The model generated for the body editor.
+   */
+  model?: ApiType[];
+  /**
+   * The selected editor
+   */
+  selected?: string;
+}
+
+export declare interface UrlMeta {
+  /**
+   * The model generated for the URL parameters.
+   */
+  model?: ApiType[];
+  /**
+   * The query params delimiter. By default it is `&`.
+   */
+  delimiter?: string;
+}
+
+export declare interface HeadersMeta {
+  /**
+   * The model generated for the headers editor.
+   */
+  model?: ApiType[];
+  /**
+   * Whether the source editor is opened.
+   */
+  source?: boolean;
+}
+
+/**
+ * UI configuration for the request.
+ */
+export declare interface RequestUiMeta {
+  /**
+   * Body editor metadata.
+   */
+  body?: BodyMeta;
+  /**
+   * URL editor metadata.
+   */
+  url?: UrlMeta;
+  /**
+   * Headers editor metadata.
+   */
+  headers?: HeadersMeta;
+}
+
+
 /**
  * The definition of the ARC request that is shared in different contexts.
  */
@@ -172,6 +225,12 @@ export declare interface ArcBaseRequest extends HTTPRequest {
    * @deprecated Do not use.
    */
   _isErrorResponse?: boolean;
+  /**
+   * The UI configuration for the request.
+   * Each part of the UI has its own default state so this is optional and 
+   * always updated when the UI change.
+   */
+  ui: RequestUiMeta;
 }
 
 /**
