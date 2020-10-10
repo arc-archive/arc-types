@@ -155,6 +155,10 @@ export declare interface ArcBaseRequest extends HTTPRequest {
    */
   response?: Response;
   /**
+   * Set together with `response` property. Describes a request sent by the transport.
+   */
+  transportRequest?: TransportRequest,
+  /**
    * Old ARC's response declaration. This is kept for internal data model processing. 
    * @deprecated Do not use.
    */
