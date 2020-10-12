@@ -135,11 +135,15 @@ export declare interface ApiType {
   /**
    * Enum values for the property.
    */
-  enum?: any;
+  enum?: any|any[];
   /**
    * The description of the property
    */
   description?: string;
+  /**
+   * Whether the value id required to be provided. This is used with validation.
+   */
+  required?: boolean;
 }
 
 /**

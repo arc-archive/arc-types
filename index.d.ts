@@ -16,6 +16,7 @@ import * as UrlHistory from './src/models/UrlHistory';
 import * as Variable from './src/models/Variable';
 import * as ApiTypes from './src/models/ApiTypes';
 import * as HistoryData from './src/request/HistoryData';
+import * as RequestBody from './src/request/RequestBody';
 
 export {
   DataExport,
@@ -36,4 +37,5 @@ export {
   Variable,
   ApiTypes,
   HistoryData,
+  RequestBody,
 };

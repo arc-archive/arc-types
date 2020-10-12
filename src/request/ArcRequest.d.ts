@@ -4,30 +4,13 @@ import { Entity } from '../models/base';
 import { Response } from './ArcResponse';
 import { LegacyResponse, LegacyResponseMeta } from './Legacy';
 import { ApiType } from '../models/ApiTypes';
+import { BodyMeta, MultipartBody } from './RequestBody';
 
-export declare interface MultipartTransformer {
-  /**
-   * When true a this entry represent a file part
-   */
-  isFile: boolean;
-  /**
-   * The name of the filed
-   */
-  name: string;
-  /**
-   * Converted value
-   */
-  value: string;
-  /**
-   * A content type entered by the user to the text part of the text part input.
-   * This can only be set when `isFile` is false.
-   */
-  type?: string;
-  /**
-   * The original file name used with the part
-   */
-  fileName?: string;
-}
+/**
+ * This interface was used in a few components, this is left for compatibility
+ * @deprecated Use RequestBody.MultipartBody instead
+ */
+export declare interface MultipartTransformer extends MultipartBody {}
 
 /**
  * The definition of the ARC base HTTP request object
@@ -133,17 +116,9 @@ export declare interface RequestAuthorization {
   enabled: boolean;
 }
 
-export declare interface BodyMeta {
-  /**
-   * The model generated for the body editor.
-   */
-  model?: ApiType[];
-  /**
-   * The selected editor
-   */
-  selected?: string;
-}
-
+/**
+ * URL editor meta data.
+ */
 export declare interface UrlMeta {
   /**
    * The model generated for the URL parameters.
@@ -155,6 +130,9 @@ export declare interface UrlMeta {
   delimiter?: string;
 }
 
+/**
+ * Headers editor meta data.
+ */
 export declare interface HeadersMeta {
   /**
    * The model generated for the headers editor.
@@ -265,7 +243,7 @@ export declare interface ArcStoredRequest extends ArcBaseRequest {
    * and when requesting ARC request object this is restored to the original
    * format.
    */
-  multipart?: MultipartTransformer[];
+  multipart?: MultipartBody[];
   /**
    * When a file is the request payload then in the data store it is transformed into a 
    * string and the payload is emptied. This is used internally by the data store
