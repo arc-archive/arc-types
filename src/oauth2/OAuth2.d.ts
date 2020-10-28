@@ -45,6 +45,10 @@ declare interface TokenInfo extends TokenBase {
    * The list of scopes the token has been granted
    */
   scope?: string[];
+  /**
+   * The refresh token, when requested
+   */
+  refreshToken?: string;
 }
 
 /**
