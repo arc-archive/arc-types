@@ -143,10 +143,7 @@ export declare interface OAuth2CustomData {
   token?: OAuth2TokenRequestCustomData;
 }
 
-/**
- * OAuth 2 configuration object used in Advanced REST Client and API Components.
- */
-export declare interface OAuth2Authorization {
+declare interface BaseOAuth2Authorization {
   /**
    * OAuth flow with `interactive` option set to `false` allows to quietly request for the token from the cache or form the authorization server
    * without notifying the user (without bringing the authorization pop-up).
@@ -154,6 +151,17 @@ export declare interface OAuth2Authorization {
    * This is to be used to check if valid session exists for current user and update the UI accordingly.
    */
   interactive?: boolean;
+  /**
+   * List of scopes to be used with the token request.
+   * This parameter is not required per OAuth2 spec.
+   */
+  scopes?: string[];
+}
+
+/**
+ * OAuth 2 configuration object used in Advanced REST Client and API Components.
+ */
+export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
   /**
    * The grant type of the OAuth 2 flow.
    *
@@ -164,12 +172,11 @@ export declare interface OAuth2Authorization {
    * - client_credentials
    * - any custom grant supported by the authorization server
    */
-  type: string;
-
+  responseType?: string;
   /**
    * The client ID registered in the OAuth2 provider.
    */
-  clientId: string;
+  clientId?: string;
   /**
    * The client ID registered in the OAuth2 provider.
    * This value is not required for select grant types.
@@ -199,15 +206,10 @@ export declare interface OAuth2Authorization {
    */
   password?: string;
   /**
-   * List of scopes to be used with the token request.
-   * This parameter is not required per OAuth2 spec.
-   */
-  scopes?: string[];
-  /**
    * The state parameter as defined in the OAuth2 spec.
    * The state is returned back with the token response.
    */
-  state: string;
+  state?: string;
   /**
    * Additional data defined outside the scope of the OAuth2 protocol to be set
    * on both authorization and token requests.
