@@ -166,13 +166,14 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    * The grant type of the OAuth 2 flow.
    *
    * Can be:
-   * - implicit
+   * - implicit - deprecated and legacy
    * - authorization_code
-   * - password
+   * - password - deprecated and legacy
    * - client_credentials
+   * - refresh_token
    * - any custom grant supported by the authorization server
    */
-  responseType?: string;
+  grantType?: 'implicit' | 'authorization_code' | 'password' | 'client_credentials' | 'refresh_token' | string;
   /**
    * The client ID registered in the OAuth2 provider.
    */
@@ -226,4 +227,10 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    * Used by Google's oauth 2 server. It's the user email, when known.
    */
   loginHint?: string;
+  /**
+   * When set the `authorization_code` will use the PKCE extension of the OAuth2 
+   * to perform the authorization. Default to `false`.
+   * This is only relevant when the `authorization_code` grant type is used.
+   */
+  pkce?: boolean;
 }
