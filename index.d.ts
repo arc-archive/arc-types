@@ -16,11 +16,11 @@ import * as Variable from './src/models/Variable';
 import * as ApiTypes from './src/models/ApiTypes';
 import * as HistoryData from './src/request/HistoryData';
 import * as RequestBody from './src/request/RequestBody';
+import * as Config from './src/config/ArcConfig';
 
 export {
   DataExport,
   Cookies,
-  OAuth2,
   GoogleDrive,
   FormTypes,
   ArcResponse,
@@ -37,4 +37,5 @@ export {
   ApiTypes,
   HistoryData,
   RequestBody,
+  Config,
 };
