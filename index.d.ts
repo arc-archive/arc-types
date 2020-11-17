@@ -17,6 +17,7 @@ import * as ApiTypes from './src/models/ApiTypes';
 import * as HistoryData from './src/request/HistoryData';
 import * as RequestBody from './src/request/RequestBody';
 import * as Config from './src/config/ArcConfig';
+import * as Actions from './src/actions/Actions';
 
 export {
   DataExport,
@@ -38,4 +39,5 @@ export {
   HistoryData,
   RequestBody,
   Config,
+  Actions,
 };
