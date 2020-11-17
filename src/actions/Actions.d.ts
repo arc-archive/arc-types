@@ -191,7 +191,7 @@ export declare interface DataSourceConfiguration {
   /**
    * Source of the data.
    */
-  source: RequestDataSourceEnum|ResponseDataSourceEnum;
+  source: RequestDataSourceEnum | ResponseDataSourceEnum | 'value';
   /**
    * When set the iterator configuration is enabled
    */
@@ -205,6 +205,11 @@ export declare interface DataSourceConfiguration {
    * is a path counting from an array item. When not set an entire value of `source` is used.
    */
   path?: string;
+  /**
+   * The value to set. This is only used when `source` is set to `value`. The data is not extracted from any of the request fields
+   * but this value is used.
+   */
+  value?: string;
 }
 
 export declare interface IteratorConfiguration {
