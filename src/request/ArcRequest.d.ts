@@ -5,6 +5,7 @@ import { Response } from './ArcResponse';
 import { LegacyResponse, LegacyResponseMeta } from './Legacy';
 import { ApiType } from '../models/ApiTypes';
 import { BodyMeta, MultipartBody } from './RequestBody';
+import { RunnableAction } from '../actions/Actions';
 
 /**
  * This interface was used in a few components, this is left for compatibility
@@ -162,6 +163,16 @@ export declare interface RequestUiMeta {
   headers?: HeadersMeta;
 }
 
+export declare interface RequestActions {
+  /**
+   * Actions to be executed before the request is sent to the transport library.
+   */
+  request?: RunnableAction[];
+  /**
+   * Actions to be executed after the response is fully received but before it is reported back to the UI.
+   */
+  response?: RunnableAction[];
+}
 
 /**
  * The definition of the ARC request that is shared in different contexts.
@@ -209,6 +220,10 @@ export declare interface ArcBaseRequest extends HTTPRequest {
    * always updated when the UI change.
    */
   ui: RequestUiMeta;
+  /**
+   * Actions to be performed when the request is executed.
+   */
+  actions?: RequestActions;
 }
 
 /**
