@@ -1,33 +1,54 @@
 export declare type ActionType = 'request' | 'response';
+/**
+ * A base interface describing a configuration to extract data from a request or a response.
+ */
+export declare interface BaseCondition {
+ /**
+   * The main data source. Either the request or the response object.
+   * This is required when the `source` is not equal to `value. In this case it is ignored
+   */
+  type?: ActionType;
+  /**
+   * Source of the data.
+   */
+  source: RequestDataSourceEnum | ResponseDataSourceEnum | 'value';
+  /**
+   * The path to the data. When `iteratorEnabled` is set then this
+   * is a path counting from an array item. When not set an entire value of `source` is used.
+   */
+  path?: string;
+  /**
+   * This is only used when `source` is set to `value`. The data is not extracted from any of the request fields but this value is used.
+   */
+  value?: string;
+}
+/**
+ * A configuration that extracts complex data from arrays.
+ */
+export declare interface DataSourceConfiguration extends BaseCondition {
+  /**
+   * When set the iterator configuration is enabled
+   */
+  iteratorEnabled?: boolean;
+  /**
+   * Array search configuration.
+   */
+  iterator?: IteratorConfiguration;
+}
 
 /**
  * Describes action's condition configuration.
  */
-export declare interface Condition {
+export declare interface Condition extends DataSourceConfiguration {
   /**
-   * The condition is either request or response related.
-   */
-  type: string;
-  /**
-   * The source of the data.
-   * The type of the data source (request or response) depends on
-   * the context at which the condition runs.
-   */
-  source?: string;
-  /**
-   * The value to compare to.
+   * The value to compare to the result of extracted from the data source value.
    * Usually it is a string. For `statuscode` acceptable value is a number.
    */
-  value?: string | number;
+  predictedValue?: string | number;
   /**
    * The comparison operator.
    */
-  operator?: OperatorEnum | string;
-  /**
-   * Path to the data to extract the value to test the condition.
-   * Only relevant for some `source` options.
-   */
-  path?: string;
+  operator?: OperatorEnum;
   /**
    * Whether the condition always pass.
    * The condition is not really checked, values can be empty. The condition check always returns `true`.
@@ -97,19 +118,19 @@ export declare interface Action {
   /**
    * Action configuration
    */
-  config: ActionConfiguration;
+  config?: ActionConfiguration;
   /**
    * Whether or not the action is executed synchronously to request / response
    */
-  sync: boolean;
+  sync?: boolean;
   /**
    * Whether or not the request should fail when the action fails.
    */
-  failOnError: boolean;
+  failOnError?: boolean;
   /**
    * Options passed to the UI.
    */
-  view: ActionViewConfiguration;
+  view?: ActionViewConfiguration;
 }
 
 /**
@@ -187,31 +208,6 @@ export declare interface DeleteCookieConfig {
   name?: string;
 }
 
-export declare interface DataSourceConfiguration {
-  /**
-   * Source of the data.
-   */
-  source: RequestDataSourceEnum | ResponseDataSourceEnum | 'value';
-  /**
-   * When set the iterator configuration is enabled
-   */
-  iteratorEnabled?: boolean;
-  /**
-   * Array search configuration.
-   */
-  iterator?: IteratorConfiguration;
-  /**
-   * The path to the data. When `iteratorEnabled` is set then this
-   * is a path counting from an array item. When not set an entire value of `source` is used.
-   */
-  path?: string;
-  /**
-   * The value to set. This is only used when `source` is set to `value`. The data is not extracted from any of the request fields
-   * but this value is used.
-   */
-  value?: string;
-}
-
 export declare interface IteratorConfiguration {
   /**
    * The path to the property to use in the comparison.
@@ -228,8 +224,8 @@ export declare interface IteratorConfiguration {
 }
 
 export type OperatorEnum = "equal" | "not-equal" | "greater-than" | "greater-than-equal" | "less-than" | "less-than-equal" | "contains" | "regex";
-export type RequestDataSourceEnum = "request.url" | "request.method" | "request.headers" | "request.body";
-export type ResponseDataSourceEnum = "response.url" | "response.method" | "response.headers" | "response.body";
+export type RequestDataSourceEnum = "url" | "method" | "headers" | "body";
+export type ResponseDataSourceEnum = "url" | "status" | "headers" | "body";
 
 /**
  * An UI controlling configuration for an action.

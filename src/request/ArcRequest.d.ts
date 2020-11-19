@@ -219,7 +219,7 @@ export declare interface ArcBaseRequest extends HTTPRequest {
    * Each part of the UI has its own default state so this is optional and 
    * always updated when the UI change.
    */
-  ui: RequestUiMeta;
+  ui?: RequestUiMeta;
   /**
    * Actions to be performed when the request is executed.
    */
