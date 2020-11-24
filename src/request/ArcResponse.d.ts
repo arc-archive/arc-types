@@ -79,7 +79,10 @@ export declare interface RequestsSize {
 }
 
 export declare interface BaseResponse extends HTTPResponse {
-  
+  /**
+   * The ID of the request object used to trigger the response.
+   */
+  id?: string;
 }
 
 /**
