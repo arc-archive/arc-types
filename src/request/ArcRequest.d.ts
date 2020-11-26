@@ -145,6 +145,13 @@ export declare interface HeadersMeta {
   source?: boolean;
 }
 
+export declare interface AuthMeta {
+  /**
+   * The index of the selected authorization method.
+   */
+  selected?: number;
+}
+
 /**
  * UI configuration for the request.
  */
@@ -161,6 +168,10 @@ export declare interface RequestUiMeta {
    * Headers editor metadata.
    */
   headers?: HeadersMeta;
+  /**
+   * Authorization editor meta.
+   */
+  authorization?: AuthMeta;
 }
 
 export declare interface RequestActions {
