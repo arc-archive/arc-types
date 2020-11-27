@@ -6,6 +6,7 @@ import { LegacyResponse, LegacyResponseMeta } from './Legacy';
 import { ApiType } from '../models/ApiTypes';
 import { BodyMeta, MultipartBody } from './RequestBody';
 import { RunnableAction } from '../actions/Actions';
+import { Variable } from '../models/Variable';
 
 /**
  * This interface was used in a few components, this is left for compatibility
@@ -77,6 +78,10 @@ export declare interface RequestConfig {
    */
   followRedirects?: boolean;
   /**
+   * Does not set session (saved) cookies to this request
+   */
+  ignoreSessionCookies?: boolean;
+  /**
    * Hosts table configuration.
    */
   hosts?: HostRule;
@@ -96,7 +101,7 @@ export declare interface RequestConfig {
    * A list of variables to use with the request.
    * Note, request variables override application and workspace variables.
    */
-  variables?: object[];
+  variables?: Variable[];
 }
 
 /**
