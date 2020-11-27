@@ -72,7 +72,7 @@ export declare interface RequestConfig {
    * The request timeout.
    * Default no timeout.
    */
-  timeout?: boolean;
+  timeout?: number;
   /**
    * Whether or not the request should follow redirects.
    */
