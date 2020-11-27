@@ -188,6 +188,11 @@ export declare interface RequestUiMeta {
    * ARC request actions editor UI config.
    */
   actions?: ActionsMeta;
+
+  /**
+   * The currently selected editor in the request editor UI.
+   */
+  selectedEditor?: number;
 }
 
 export declare interface RequestActions {
