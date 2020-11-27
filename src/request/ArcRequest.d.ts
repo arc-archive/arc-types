@@ -152,6 +152,13 @@ export declare interface AuthMeta {
   selected?: number;
 }
 
+export declare interface ActionsMeta {
+  /**
+   * The index of the selected arc actions view.
+   */
+  selected?: number;
+}
+
 /**
  * UI configuration for the request.
  */
@@ -172,6 +179,10 @@ export declare interface RequestUiMeta {
    * Authorization editor meta.
    */
   authorization?: AuthMeta;
+  /**
+   * ARC request actions editor UI config.
+   */
+  actions?: ActionsMeta;
 }
 
 export declare interface RequestActions {
