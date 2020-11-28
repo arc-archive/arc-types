@@ -233,7 +233,42 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    * This is only relevant when the `authorization_code` grant type is used.
    */
   pkce?: boolean;
+  /**
+   * The access token type. Default to `Bearer`
+   */
+  tokenType?: string;
+  /**
+   * The last access token received from the authorization server. 
+   * This is optional and indicates that the token has been already received.
+   * This property should not be stored anywhere.
+   */
+  accessToken?: string;
+
+  /**
+   * Informs about what filed of the authenticated request the token property should be set.
+   * By default the value is `header` which corresponds to the `authorization` by default,
+   * but it is configured by the `deliveryName` property.
+   * 
+   * This can be used by the AMF model when the API spec defines where the access token should be
+   * put in the authenticated request.
+   * 
+   * @default header
+   */
+  deliveryMethod?: OAuth2DeliveryMethod;
+
+  /**
+   * The name of the authenticated request property that carries the token.
+   * By default it is `authorization` which corresponds to `header` value of the `deliveryMethod` property.
+   * 
+   * By setting both `deliveryMethod` and `deliveryName` you instruct the application (assuming it reads this values)
+   * where to put the authorization token.
+   * 
+   * @default authorization
+   */
+  deliveryName?: string;
 }
+
+export type OAuth2DeliveryMethod = 'header' | 'query' | 'body';
 
 /**
  * Options for removing the OAuth 2 token from the cache.
