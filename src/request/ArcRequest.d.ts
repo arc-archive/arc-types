@@ -7,6 +7,7 @@ import { ApiType } from '../models/ApiTypes';
 import { BodyMeta, MultipartBody } from './RequestBody';
 import { RunnableAction } from '../actions/Actions';
 import { Variable } from '../models/Variable';
+import { RequestCertificate } from '../models/ClientCertificate';
 
 /**
  * This interface was used in a few components, this is left for compatibility
@@ -256,6 +257,8 @@ export declare interface ArcBaseRequest extends HTTPRequest {
    * Actions to be performed when the request is executed.
    */
   actions?: RequestActions;
+
+  clientCertificate?: RequestCertificate;
 }
 
 /**
