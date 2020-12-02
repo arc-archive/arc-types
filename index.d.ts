@@ -18,6 +18,8 @@ import * as HistoryData from './src/request/HistoryData';
 import * as RequestBody from './src/request/RequestBody';
 import * as Config from './src/config/ArcConfig';
 import * as Actions from './src/actions/Actions';
+import * as Workspace from './src/domain/Workspace';
+import * as Meta from './src/domain/Meta';
 
 export {
   DataExport,
@@ -40,4 +42,6 @@ export {
   RequestBody,
   Config,
   Actions,
+  Workspace,
+  Meta,
 };
