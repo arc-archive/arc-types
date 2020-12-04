@@ -1,3 +1,5 @@
+import { MultipartBody } from "./RequestBody";
+
 /**
  * Schema definition for ARC request timings. This is mostly consistent with HAR timings.
  */
@@ -106,6 +108,21 @@ export declare interface Response extends BaseResponse {
    * Request and response size. Some HTTP clients may not give this information.
    */
   size?: RequestsSize;
+
+  /**
+   * ARCs internal transformation of a native FormData into a structure that
+   * can be stored in the data store. This is used internally by their model
+   * and when requesting ARC request object this is restored to the original
+   * format.
+   */
+  multipart?: MultipartBody[];
+
+  /**
+   * When a file is the request payload then in the data store it is transformed into a 
+   * string and the payload is emptied. This is used internally by the data store
+   * to restore the original format
+   */
+  blob?: string;
 }
 
 export declare interface ErrorResponse extends BaseResponse {
