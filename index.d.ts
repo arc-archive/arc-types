@@ -20,6 +20,7 @@ import * as Config from './src/config/ArcConfig';
 import * as Actions from './src/actions/Actions';
 import * as Workspace from './src/domain/Workspace';
 import * as Meta from './src/domain/Meta';
+import * as Themes from './src/themes/Themes';
 
 export {
   DataExport,
@@ -44,4 +45,5 @@ export {
   Actions,
   Workspace,
   Meta,
+  Themes,
 };
