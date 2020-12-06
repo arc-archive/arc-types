@@ -67,6 +67,10 @@ export declare interface ResponseRedirect {
    * The timestamp of when the response ended.
    */
   endTime: number;
+  /**
+   * The URL the request was redirected to
+   */
+  url: string;
 }
 
 export declare interface RequestsSize {
@@ -123,6 +127,11 @@ export declare interface Response extends BaseResponse {
    * to restore the original format
    */
   blob?: string;
+
+  /**
+   * The authentication request from the server.
+   */
+  auth?: ResponseAuth;
 }
 
 export declare interface ErrorResponse extends BaseResponse {
@@ -130,4 +139,20 @@ export declare interface ErrorResponse extends BaseResponse {
    * An error associated with the response
    */
   error: Error;
+}
+
+export declare interface ResponseAuth {
+  /**
+   * The requested by the authorization server authentication method
+   */
+  method: string;
+  /**
+   * The current state if the authorization process. This is used by NTLM authorization helper.
+   */
+  state?: number;
+  /**
+   * The headers association with the response.
+   */
+  headers?: string;
+  challengeHeader?: string;
 }
