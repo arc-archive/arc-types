@@ -26,8 +26,9 @@ export declare interface InstalledTheme {
   _id: string;
   /**
    * The title to render in the UI.
+   * If not set the `name` is used.
    */
-  title: string;
+  title?: string;
   /**
    * Theme's name from the package.json file.
    */
@@ -56,4 +57,12 @@ export declare interface InstalledTheme {
    * ARC version that this theme will work with. When the version mismatch then a default theme is loaded.
    */
   engine?: string;
+  /**
+   * Set when the installed theme is a symlink.
+   */
+  isSymlink?: boolean;
+  /**
+   * The timestamp when the update was checked the last time.
+   */
+  updateCheck?: number;
 }
