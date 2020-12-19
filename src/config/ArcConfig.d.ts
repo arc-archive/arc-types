@@ -26,6 +26,10 @@ export declare interface ARCConfig {
    */
   request?: ARCRequestConfig;
   /**
+   * Response view configuration
+   */
+  response?: ARCResponseConfig;
+  /**
    * User privacy options.
    */
   privacy?: ARCPrivacyConfig;
@@ -126,4 +130,17 @@ export declare interface ARCHistoryConfig {
    * When set it performs the "fast search" in the requests store
    */
   fastSearch?: boolean;
+}
+
+export declare interface ARCResponseConfig {
+  /**
+   * The size of a response that triggers "raw" view by default.
+   * @default 4096
+   */
+  forceRawSize?: number;
+  /**
+   * The size of a response, in KB, that triggers warning message instead of showing the response.
+   * @default 2048
+   */
+  warningResponseMaxSize?: number;
 }
