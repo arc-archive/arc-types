@@ -194,6 +194,21 @@ export declare interface RequestUiMeta {
    * The currently selected editor in the request editor UI.
    */
   selectedEditor?: number;
+  /**
+   * Optional configuration of the response view
+   */
+  response?: ResponseUiMeta;
+}
+
+export declare interface ResponseUiMeta {
+  /**
+   * The list of activated panels in the response view.
+   */
+  activePanels?: string[];
+  /**
+   * The name of the selected response panel.
+   */
+  selectedPanel?: string;
 }
 
 export declare interface RequestActions {
