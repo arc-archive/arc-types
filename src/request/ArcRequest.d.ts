@@ -1,7 +1,7 @@
 import { LegacyAuth, BasicAuthorization, BearerAuthorization, NtlmAuthorization, DigestAuthorization, OAuth1Authorization, OAuth2Authorization, CCAuthorization } from '../authorization/Authorization';
 import { HostRule } from '../models/HostRule';
 import { Entity } from '../models/base';
-import { Response } from './ArcResponse';
+import { ErrorResponse, Response } from './ArcResponse';
 import { LegacyResponse, LegacyResponseMeta } from './Legacy';
 import { ApiType } from '../models/ApiTypes';
 import { BodyMeta, MultipartBody } from './RequestBody';
@@ -243,7 +243,7 @@ export declare interface ArcBaseRequest extends HTTPRequest {
    * The last response made with this request. This is always set with the history object.
    * May not be set with others.
    */
-  response?: Response;
+  response?: Response | ErrorResponse;
   /**
    * Set together with `response` property. Describes a request sent by the transport.
    */
