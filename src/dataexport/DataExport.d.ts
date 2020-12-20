@@ -1,4 +1,4 @@
-import { ARCSavedRequest, ARCHistoryRequest } from '../request/ArcRequest';
+import { ARCSavedRequest, ARCHistoryRequest, ArcBaseRequest } from '../request/ArcRequest';
 import { ARCAuthData } from '../models/AuthData';
 import { ARCWebsocketUrlHistory, ARCUrlHistory } from '../models/UrlHistory';
 import { ARCHostRule } from '../models/HostRule';
@@ -71,7 +71,7 @@ export declare interface ArcNativeDataExport {
   history?: boolean | ARCHistoryRequest[];
   hostrules?: boolean | ARCHostRule[];
   projects?: boolean | ARCProject[];
-  requests?: boolean | ARCSavedRequest[];
+  requests?: boolean | (ARCSavedRequest | ArcBaseRequest | ARCHistoryRequest)[];
   variables?: boolean | ARCVariable[];
   websocketurlhistory?: boolean | ARCWebsocketUrlHistory[];
   urlhistory?: boolean | ARCUrlHistory[];
