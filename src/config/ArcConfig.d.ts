@@ -11,6 +11,17 @@ export declare interface RequestEditorConfig {
    * @default Monaco
    */
   bodyEditor?: 'CodeMirror' | 'Monaco';
+  /**
+   * Whether to render the send button in the request editor.
+   * @default true
+   */
+  sendButton?: boolean;
+  /**
+   * Whether to render the request progress status in the request panel.
+   * This works with the events dispatched by the transport library. Custom libraries may not support this.
+   * @default true
+   */
+  progressInfo?: boolean;
 }
 
 /**
@@ -59,6 +70,11 @@ export declare interface ARCViewConfig {
    * Enables drag and drop in the application.
    */
   draggableEnabled?: boolean;
+  /**
+   * The font size used by the application. In pixels.
+   * @default 15
+   */
+  fontSize?: number;
 }
 
 export declare interface ARCRequestConfig {
