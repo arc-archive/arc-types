@@ -23,3 +23,5 @@ export declare interface ARCVariable extends Variable, Entity {
    */
   variable?: string;
 }
+
+export declare type SystemVariables = Readonly<{[key: string]: string}>;
