@@ -74,6 +74,10 @@ export declare interface DomainWorkspace {
    * The index id the request that is being rendered as open when the workspace is loaded.
    */
   selected?: number;
+  /**
+   * The configuration of ARC's web session
+   */
+  webSession?: DomainWorkspaceWebSession;
 }
 
 export declare interface LegacyWorkspace {
