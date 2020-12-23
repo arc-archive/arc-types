@@ -19,8 +19,8 @@ export declare interface WebsocketRequest {
   ui?: WebsocketRequestUiMeta;
   /**
    * When a file is the request payload then in the data store it is transformed into a 
-   * string and the payload is emptied. This is used internally by the data store
-   * to restore the original format
+   * string and the payload is removed. This is used internally by the data store
+   * to restore the original format.
    */
   blob?: string;
 }
@@ -98,6 +98,12 @@ export declare interface WebsocketLog {
    * The timestamp when the message was created.
    */
   created: number;
+  /**
+   * When a non-string log message then in the data store it is transformed into a 
+   * string and the payload is removed. This is used internally by the data store
+   * to restore the original format.
+   */
+  blob?: string;
 }
 
 export declare interface WebsocketConnectionResult {
