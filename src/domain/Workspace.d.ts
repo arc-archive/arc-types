@@ -1,6 +1,7 @@
 import { RunnableAction } from "../actions/Actions";
 import { Variable } from "../models/Variable";
 import { ArcBaseRequest, ARCHistoryRequest, ARCSavedRequest, RequestConfig } from "../request/ArcRequest";
+import { WebsocketRequest, WebsocketStoredRequest } from "../request/WebSocket";
 import { Provider, ThingMeta } from "./Meta";
 
 export declare interface DomainWorkspaceAuthorization {
@@ -49,7 +50,7 @@ export declare interface DomainWorkspace {
    * The list of requests in the workspace.
    * If you creating a requests outside ARC / API client then only use `ArcEditorRequest`  type.
    */
-  requests?: (ArcBaseRequest | ARCSavedRequest | ARCHistoryRequest)[];
+  requests?: (ArcBaseRequest | ARCSavedRequest | ARCHistoryRequest | WebsocketRequest | WebsocketStoredRequest)[];
   /**
    * The list of ARC's request actions to execute before a request in this workspace is executed.
    */

@@ -21,6 +21,7 @@ import * as Actions from './src/actions/Actions';
 import * as Workspace from './src/domain/Workspace';
 import * as Meta from './src/domain/Meta';
 import * as Themes from './src/themes/Themes';
+import * as WebSocket from './src/request/WebSocket';
 
 export {
   DataExport,
@@ -46,4 +47,5 @@ export {
   Workspace,
   Meta,
   Themes,
+  WebSocket,
 };

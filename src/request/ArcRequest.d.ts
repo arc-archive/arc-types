@@ -227,6 +227,10 @@ export declare interface RequestActions {
  */
 export declare interface ArcBaseRequest extends HTTPRequest {
   /**
+   * The kind of the object. In ARC by default a request object is an HTTP request object.
+   */
+  kind?: 'ARC#HttpRequest';
+  /**
    * Request processing configuration.
    */
   config?: RequestConfig;
