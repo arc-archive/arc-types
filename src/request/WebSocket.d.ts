@@ -1,6 +1,7 @@
 import { ApiType } from "../models/ApiTypes";
 import { RawBody } from './RequestBody';
 import { Entity } from '../models/base';
+import { TransformedPayload } from "./ArcResponse";
 
 export declare interface WebsocketRequest {
   kind: 'ARC#WebsocketRequest';
@@ -12,7 +13,7 @@ export declare interface WebsocketRequest {
    * The data to be send.
    * Note, when the event carrying this data is the connect event this property may be discarded
    */
-  payload?: string | Blob | File | ArrayBuffer;
+  payload?: string | Blob | File | ArrayBuffer | TransformedPayload;
   /**
    * The editor metadata
    */
@@ -89,7 +90,7 @@ export declare interface WebsocketLog {
   /**
    * The message transmitted over the socket.
    */
-  message: string | Blob | File | ArrayBuffer;
+  message: string | Blob | File | ArrayBuffer | TransformedPayload;
   /**
    * The size of the message in bytes
    */
