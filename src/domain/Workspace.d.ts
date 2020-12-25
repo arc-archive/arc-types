@@ -50,7 +50,7 @@ export declare interface DomainWorkspace {
    * The list of requests in the workspace.
    * If you creating a requests outside ARC / API client then only use `ArcEditorRequest`  type.
    */
-  requests?: (ArcBaseRequest | ARCSavedRequest | ARCHistoryRequest | WebsocketRequest | WebsocketStoredRequest)[];
+  requests?: WorkspaceRequestUnion[];
   /**
    * The list of ARC's request actions to execute before a request in this workspace is executed.
    */
@@ -92,3 +92,5 @@ export declare interface LegacyWorkspace {
   requests?: any[];
   variables: Variable[];
 }
+
+export declare type WorkspaceRequestUnion = ArcBaseRequest | ARCSavedRequest | ARCHistoryRequest | WebsocketRequest | WebsocketStoredRequest;
