@@ -17,6 +17,7 @@ import * as ApiTypes from './src/models/ApiTypes';
 import * as HistoryData from './src/request/HistoryData';
 import * as RequestBody from './src/request/RequestBody';
 import * as Config from './src/config/ArcConfig';
+import * as ArcState from './src/config/ArcState';
 import * as Actions from './src/actions/Actions';
 import * as Workspace from './src/domain/Workspace';
 import * as Meta from './src/domain/Meta';
@@ -43,6 +44,7 @@ export {
   HistoryData,
   RequestBody,
   Config,
+  ArcState,
   Actions,
   Workspace,
   Meta,
