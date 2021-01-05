@@ -20,6 +20,17 @@ export declare interface FormItem {
   schema?: FormItemSchema;
 }
 
+export declare interface AmfFormItem extends FormItem {
+ /**
+   * Property schema
+   */
+  schema?: AmfFormItemSchema;
+  /** 
+   * If the model is a type of object it is a list of this model objects.
+   */
+  properties?: any[];
+}
+
 export declare interface FormItemSchema {
   /**
    * Whether the property is required. It is not by default.
@@ -36,7 +47,7 @@ export declare interface FormItemSchema {
   /**
    * The value of `type` property of the input element used to input value. Default to text.
    */
-  inputType?: string;
+  inputType?: 'number' | 'boolean' | 'date' | 'text';
   /**
    * Input element's pattern
    */
@@ -60,7 +71,7 @@ export declare interface FormItemSchema {
   /**
    * For the numeric types, binds this value to the `step` attribute
    */
-  step?: number;
+  multipleOf?: number;
   /**
    * For the numeric types, binds this value to the `minimum` attribute
    */
@@ -88,4 +99,63 @@ declare interface Example {
    * Example title
    */
   title?: string;
+}
+
+export declare interface AmfFormItemSchema extends FormItemSchema {
+  /**
+   * Data type of the property
+   */
+  apiType?: string;
+  /**
+   * Format of a number type
+   */
+  format?: string;
+  /**
+   * List of file types defined for a file type.
+   */
+  fileTypes?: string[];
+  /**
+   * Flag describing whether the type is an union
+   */
+  isUnion?: boolean;
+  /**
+   * List of possible types of the union.
+   */
+  anyOf?: any[];
+  /**
+   * Label for the form control
+   */
+  inputLabel?: string;
+  /**
+   * Flag describing array value for the property
+   */
+  isArray?: boolean;
+  /**
+   * Name of the items type
+   */
+  items?: string|string[];
+  /**
+   * Flag describing boolean value for the property
+   */
+  isBool?: boolean;
+  /**
+   * Flag describing File value for the property
+   */
+  isFile?: boolean;
+  /**
+   * Flag describing Object value for the property
+   */
+  isObject?: boolean;
+  /**
+   * True when it is an union and one of union items is nil.
+   */
+  isNillable?: boolean;
+  /**
+   * Flag describing whether the item is a custom control. This is not generated from the AMF model but rather when a custom model is being created manually.
+   */
+  isCustom?: boolean;
+  /** 
+   * Extended documentation that includes description, patterns and examples.
+   */
+  extendedDescription?: string;
 }
