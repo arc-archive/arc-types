@@ -94,11 +94,40 @@ declare interface Example {
   /**
    * The example to render
    */
-  value?: string;
+  value?: string|number|boolean|object|any[];
   /**
    * Example title
    */
   title?: string;
+  /**
+   * @deprecated Use `title` instead.
+   */
+  name?: string;
+  /**
+   * Raw value of RAML example. This value is a YAML or JSON
+   * schema value. This is only set when raw value is available in the model and it is not JSON/XML.
+   */
+  raw?: string;
+  /**
+   * Only when `hasUnion` is set.
+   */
+  values?: Array<Example>;
+  /**
+   * Only when `hasUnion` is set.
+   */
+  hasRaw: boolean;
+  /**
+   * When true then `title` property has a value
+   */
+  hasTitle: boolean;
+  /**
+   * When true then `values` property has a value
+   */
+  hasUnion: boolean;
+  /**
+   * When true then the `value` is a scalar value
+   */
+  isScalar: boolean;
 }
 
 export declare interface AmfFormItemSchema extends FormItemSchema {
@@ -158,4 +187,12 @@ export declare interface AmfFormItemSchema extends FormItemSchema {
    * Extended documentation that includes description, patterns and examples.
    */
   extendedDescription?: string;
+  /**
+   * When set it prohibits a consumer of this property from encoding values automatically.
+   */
+  noAutoEncode?: boolean;
+  /**
+   * A placeholder in the `input` filed to use.
+   */
+  inputPlaceholder?: string;
 }
