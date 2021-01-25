@@ -52,6 +52,10 @@ export declare interface ARCConfig {
    * Configuration of the request editor.
    */
   requestEditor?: RequestEditorConfig;
+  /**
+   * The application updated configuration.
+   */
+  updater?: ARCUpdaterConfig;
 }
 
 /**
@@ -159,4 +163,17 @@ export declare interface ARCResponseConfig {
    * @default 2048
    */
   warningResponseMaxSize?: number;
+}
+
+export declare interface ARCUpdaterConfig {
+  /**
+   * The release channel to use.
+   * @default stable
+   */
+  channel?: string;
+  /**
+   * Whether to automatically update the application when a new version is available.
+   * @default true
+   */
+  auto?: boolean;
 }
