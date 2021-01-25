@@ -13,10 +13,10 @@ export declare interface ArcThemeStore {
    */
   active?: string;
   /**
-   * When set it ignores system preferences about the dark/light theme and will always
-   * load default/set theme.
+   * When set it uses operating system preferred color scheme. Any value in the `active` is ignored.
+   * @default true
    */
-  ignoreSystemPreference?: boolean;
+  systemPreferred?: boolean;
 }
 
 export declare interface InstalledTheme {
