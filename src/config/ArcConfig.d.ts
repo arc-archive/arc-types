@@ -136,8 +136,22 @@ export declare interface ARCRequestConfig {
 export declare interface ARCPrivacyConfig {
   /**
    * Whether the limited analytics data are collected.
+   * When the application first starts it asks the user to allow for data analytics. 
+   * The user must implicitly allow for analytics tracking therefore it is default to `false`.
+   * 
+   * @default false
    */
   telemetry?: boolean;
+  /**
+   * The tracking client ID used by the analytics to maintain the session.
+   */
+  clientId?: string;
+  /**
+   * When `telemetry` equals `false` and this is `true` then it will allow to send 
+   * information about exceptions only to google analytics.
+   * @default false
+   */
+  exceptionsOnly?: boolean;
 }
 
 export declare interface ARCHistoryConfig {
