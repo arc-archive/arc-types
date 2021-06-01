@@ -8,9 +8,9 @@ This is a stand alone module to avoid circular dependencies when using types in 
 
 ## Usage
 
-### Instalation
+### Installation
 
-```
+```sh
 npm install --save @advanced-rest-client/arc-types
 ```
 

@@ -51,3 +51,4 @@ export {
   Themes,
   WebSocket,
 };
+export * as Model from './src/models/base';
