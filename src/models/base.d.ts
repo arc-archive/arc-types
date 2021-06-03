@@ -7,6 +7,10 @@ export declare interface Entity {
    * Pouch DB datastore `_rev` as a revision of the object
    */
   _rev?: string;
+  /**
+   * Special flag used by PouchDB to delete an object.
+   */
+  _deleted?: boolean;
 }
 
 export declare interface DeletedEntity {

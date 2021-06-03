@@ -62,27 +62,28 @@ export declare interface CertificateIndex {
 }
 
 /**
- * A base client certificate object used in ARC to create / list objects
+ * A base client certificate object used in ARC to create / list objects.
+ * This is not a data entity but rather something used to outside of a context of a data store.
  */
 export declare interface ClientCertificate extends RequestCertificate, CertificateIndex {
 }
 
-
 /**
- * Client certificate datastore definition.
- */
-export declare interface ARCClientCertificate extends ClientCertificate, Entity {
-   
-}
-
-/**
- * Client certificate index datastore definition
+ * Client certificate index datastore definition. For data entity use `ARCRequestCertificate` definition.
  */
 export declare interface ARCCertificateIndex extends CertificateIndex, Entity {
   /**
    * In previous version of the application data and index keys were different.
    * This is to accommodate the difference.
-   * @deprecated In the current system both data and index uses the same ID.
+   * @deprecated In the current system both data and index uses the same ID. This is left for compatibility purposes only.
    */
   dataKey?: string;
+}
+
+/**
+ * The certificate object returned by the PouchDB store.
+ * This is the data definition of a certificate data. For index entity use `ARCCertificateIndex` definition.
+ */
+ export declare interface ARCRequestCertificate extends RequestCertificate, Entity {
+  
 }
