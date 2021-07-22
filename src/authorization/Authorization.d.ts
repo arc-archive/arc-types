@@ -344,3 +344,38 @@ declare interface TokenError {
    */
   code: string;
 }
+
+export declare interface AuthorizationParams {
+  header?: Record<string, string>;
+  query?: Record<string, string>;
+  path?: Record<string, string>;
+  cookie?: Record<string, string>;
+}
+
+/**
+ * Authorization configuration for OAS' APiKey
+ */
+export declare interface ApiKeyAuthorization extends AuthorizationParams {
+}
+
+/**
+ * Authorization configuration for the PassThrough authorization
+ */
+export declare interface PassThroughAuthorization {
+  /**
+   * List of headers to apply to the request
+   */
+  header?: Record<string, string>;
+  /**
+   * List of query parameters to apply to the request
+   */
+  query?: Record<string, string>;
+}
+
+/**
+ * Authorization configuration for RAML's custom scheme
+ */
+export declare interface RamlCustomAuthorization extends PassThroughAuthorization {
+}
+
+export type AuthorizationSettingsUnion = LegacyAuth | BasicAuthorization | BearerAuthorization | NtlmAuthorization | DigestAuthorization | OAuth1Authorization | OAuth2Authorization | CCAuthorization | ApiKeyAuthorization | PassThroughAuthorization | RamlCustomAuthorization;

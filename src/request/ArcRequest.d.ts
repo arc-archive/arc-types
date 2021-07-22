@@ -1,4 +1,4 @@
-import { LegacyAuth, BasicAuthorization, BearerAuthorization, NtlmAuthorization, DigestAuthorization, OAuth1Authorization, OAuth2Authorization, CCAuthorization } from '../authorization/Authorization';
+import { AuthorizationSettingsUnion } from '../authorization/Authorization';
 import { HostRule } from '../models/HostRule';
 import { Entity } from '../models/base';
 import { ErrorResponse, Response } from './ArcResponse';
@@ -112,7 +112,7 @@ export declare interface RequestAuthorization {
   /**
    * Authorization configuration
    */
-  config: LegacyAuth|BasicAuthorization|BearerAuthorization|NtlmAuthorization|DigestAuthorization|OAuth1Authorization|OAuth2Authorization|CCAuthorization;
+  config: AuthorizationSettingsUnion;
   /**
    * The name of the authorization
    */
@@ -121,6 +121,11 @@ export declare interface RequestAuthorization {
    * Whether the authorization is enabled.
    */
   enabled: boolean;
+  /**
+   * Whether the authorization is reported to be valid.
+   * The application should take action when the authorization is invalid but possibly allow the request.
+   */
+  valid: boolean;
 }
 
 /**
@@ -238,7 +243,7 @@ export declare interface ArcBaseRequest extends HTTPRequest {
    * The old authorization system that allowed only single request to be used.
    * @deprecated
    */
-  auth?: LegacyAuth|BasicAuthorization|BearerAuthorization|NtlmAuthorization|DigestAuthorization|OAuth1Authorization|OAuth2Authorization|CCAuthorization;
+  auth?: AuthorizationSettingsUnion;
   /**
    * Request authorization configuration
    */
