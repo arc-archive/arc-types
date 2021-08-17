@@ -131,6 +131,12 @@ export declare interface ARCRequestConfig {
    * Instead of using ARC's engine it uses native APIs for the given platform to make HTTP requests.
    */
   nativeTransport?: boolean;
+  /**
+   * When set it reads the operating system's hosts file and passes it to the request engine.
+   * This is happening in parallel to app's own hosts definition and the resulting list of
+   * hosts is a combination of both, where app's definition takes precedence over system's hosts.
+   */
+  readOsHosts?: boolean;
 }
 
 export declare interface ARCPrivacyConfig {
