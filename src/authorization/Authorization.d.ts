@@ -175,6 +175,10 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    */
   grantType?: 'implicit' | 'authorization_code' | 'password' | 'client_credentials' | 'refresh_token' | string;
   /**
+   * Optional value to set on the `response_type` paramter.
+   */
+  responseType?: string;
+  /**
    * The client ID registered in the OAuth2 provider.
    */
   clientId?: string;
@@ -243,7 +247,10 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    * This property should not be stored anywhere.
    */
   accessToken?: string;
-
+  /**
+   * The last ID token (OpenID Connect ID token) received from the authorization server.
+   */
+  idToken?: string;
   /**
    * Informs about what filed of the authenticated request the token property should be set.
    * By default the value is `header` which corresponds to the `authorization` by default,
@@ -302,9 +309,13 @@ declare interface TokenBase {
  */
 declare interface TokenInfo extends TokenBase {
   /**
-   * The access token.
+   * The access token. For OIDC this ay be ignored.
    */
   accessToken: string;
+  /**
+   * The OpenID Connect ID token.
+   */
+  idToken?: string;
   /**
    * The access token type.
    */
