@@ -62,7 +62,7 @@ export interface DigestAuthorization {
   qop: string;
   opaque: string;
   response: string;
-  nc: string|number;
+  nc: string | number;
   cnonce: string;
   algorithm: string;
 }
@@ -72,7 +72,7 @@ export interface OAuth1Authorization {
   consumerSecret: string;
   token: string;
   tokenSecret: string;
-  timestamp: string|number;
+  timestamp: string | number;
   nonce: string;
   realm: string;
   signatureMethod: string;
@@ -309,13 +309,9 @@ declare interface TokenBase {
  */
 declare interface TokenInfo extends TokenBase {
   /**
-   * The access token. For OIDC this ay be ignored.
+   * The access token.
    */
   accessToken: string;
-  /**
-   * The OpenID Connect ID token.
-   */
-  idToken?: string;
   /**
    * The access token type.
    */
@@ -331,7 +327,7 @@ declare interface TokenInfo extends TokenBase {
   /**
    * When `true` the `expires_in` and `expires_at` are assumed values (1 hour).
    */
-  expiresAssumed: boolean;
+  expiresAssumed?: boolean;
   /**
    * The list of scopes the token has been granted
    */
@@ -340,6 +336,67 @@ declare interface TokenInfo extends TokenBase {
    * The refresh token, when requested
    */
   refreshToken?: string;
+}
+
+interface OidcToken {
+  /**
+   * The response type of the token.
+   */
+  responseType: string;
+  /**
+   * The state passed by the authorization server,
+   */
+  state: string;
+}
+
+export interface OidcTokenInfo extends OidcToken {
+  /**
+   * The timestamp when the token response was read.
+   * With the combination with `expiresIn` this tells when the token 
+   * expires +- few seconds (depending onm the network).
+   */
+  time: number;
+  /**
+   * The received access token.
+   */
+  accessToken?: string;
+  /**
+   * The received refresh token.
+   */
+  refreshToken?: string;
+  /**
+   * The received ID token.
+   */
+  idToken?: string;
+  /**
+   * The received from the authorization server code.
+   * The code has no use as it probably was exchanged for the token,
+   * which invalidates the code.
+   */
+  code?: string;
+  /**
+   * The received from the authorization server token type
+   */
+  tokenType?: string;
+  /**
+   * The received from the authorization server expires_in parameter.
+   */
+  expiresIn?: number;
+  /**
+   * The received from the authorization server scope parameter processed to an array.
+   */
+  scope?: string[];
+}
+
+export interface OidcTokenError extends OidcToken {
+  /**
+   * Whether the token has error when processing it. This is the error message to render to the user.
+   */
+  errorDescription?: string;
+  /**
+   * Whether the token has error when processing it. This is the error code received from the server.
+   */
+  error?: string;
 }
 
 /**
