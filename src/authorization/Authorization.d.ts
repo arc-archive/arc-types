@@ -273,6 +273,18 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    * @default authorization
    */
   deliveryName?: string;
+  /** 
+   * The assertion parameter for the JWT token authorization.
+   * 
+   * @link https://datatracker.ietf.org/doc/html/rfc7523#section-2.1
+   */
+  assertion: string;
+  /** 
+   * The device_code parameter for the device code authorization.
+   * 
+   * @link https://datatracker.ietf.org/doc/html/rfc8628#section-3.4
+   */
+  deviceCode: string;
 }
 
 export type OAuth2DeliveryMethod = 'header' | 'query' | 'body';
