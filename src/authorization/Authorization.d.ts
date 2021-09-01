@@ -175,7 +175,7 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    */
   grantType?: 'implicit' | 'authorization_code' | 'password' | 'client_credentials' | 'refresh_token' | string;
   /**
-   * Optional value to set on the `response_type` paramter.
+   * Optional value to set on the `response_type` parameter.
    */
   responseType?: string;
   /**
@@ -221,13 +221,13 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    */
   customData?: OAuth2CustomData;
   /**
-   * This is not a standard OAuth 2 paramter.
+   * This is not a standard OAuth 2 parameter.
    * Used by Google's oauth 2 server to include already granted to this app
    * scopes to the list of this scopes.
    */
   includeGrantedScopes?: boolean;
   /**
-   * This is not a standard OAuth 2 paramter.
+   * This is not a standard OAuth 2 parameter.
    * Used by Google's oauth 2 server. It's the user email, when known.
    */
   loginHint?: string;
@@ -247,10 +247,6 @@ export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
    * This property should not be stored anywhere.
    */
   accessToken?: string;
-  /**
-   * The last ID token (OpenID Connect ID token) received from the authorization server.
-   */
-  idToken?: string;
   /**
    * Informs about what filed of the authenticated request the token property should be set.
    * By default the value is `header` which corresponds to the `authorization` by default,
@@ -409,6 +405,49 @@ export interface OidcTokenError extends OidcToken {
    * Whether the token has error when processing it. This is the error code received from the server.
    */
   error?: string;
+}
+
+export declare interface Oauth2GrantType {
+  type: string;
+  label: string;
+}
+
+export declare interface Oauth2ResponseType {
+  type: string;
+  label: string;
+}
+
+/**
+ * OpenID Connect configuration object used in Advanced REST Client and API Components.
+ */
+export declare interface OidcAuthorization extends OAuth2Authorization {
+  /**
+   * The URL of the issuer for discovery.
+   */
+  issuerUri?: string;
+  /**
+   * The list of mist recent tokens requested from the auth server.
+   */
+  tokens?: (OidcTokenInfo | OidcTokenError)[];
+  /**
+   * The array index of the token to be used with HTTP request.
+   */
+  tokenInUse?: number;
+  /**
+   * The list of response types supported by the authorization server.
+   * Optional, used to restore state.
+   */
+  supportedResponses?: Oauth2ResponseType[][];
+  /**
+   * The list of grant types supported by the authorization server.
+   * Optional, used to restore state.
+   */
+  grantTypes?: Oauth2GrantType[];
+  /**
+   * The list of scopes supported by the authorization server.
+   * Optional, used to restore state.
+   */
+  serverScopes?: string[];
 }
 
 /**
