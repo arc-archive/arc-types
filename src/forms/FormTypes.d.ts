@@ -195,4 +195,12 @@ export declare interface AmfFormItemSchema extends FormItemSchema {
    * A placeholder in the `input` filed to use.
    */
   inputPlaceholder?: string;
+  /**
+   * Represents if the field was annotated with `credentialsId`
+   */
+  isCredentialsIdField?: boolean;
+  /**
+   * Represents if the field was annotated with `credentialsSecret`
+   */
+  isCredentialsSecretField?: boolean;
 }
