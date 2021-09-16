@@ -225,6 +225,13 @@ export declare interface ARCProxyConfig extends BaseProxyConfig {
   applyToApp?: boolean;
   /**
    * When set the application tries to read system setting for proxy and applies them instead the `url` configuration.
+   * @ignore This is for a future use.
+   * @summary Do not use this property.
    */
   useSystemSettings?: boolean;
+  /**
+   * Whether the proxy settings are enabled or ignored.
+   * Note, CLI parameters always override the config values.
+   */
+  enabled?: boolean;
 }
