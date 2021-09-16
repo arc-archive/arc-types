@@ -56,6 +56,10 @@ export declare interface ARCConfig {
    * The application updated configuration.
    */
   updater?: ARCUpdaterConfig;
+  /**
+   * Application proxy settings.
+   */
+  proxy?: ARCProxyConfig;
 }
 
 /**
@@ -196,4 +200,31 @@ export declare interface ARCUpdaterConfig {
    * @default true
    */
   auto?: boolean;
+}
+
+export declare interface BaseProxyConfig {
+  /**
+   * The URL of the proxy server to use. It can be an IP address (192.168.10.20), a FQDN (my.proxy.com) or a full URL (https://my.proxy.com).
+   * By default it uses the 80 port unless otherwise specified in the URL or in the protocol.
+   */
+  url?: string;
+  /**
+   * The optional proxy username for Basic authentication.
+   */
+  username?: string;
+  /**
+   * The optional proxy password for Basic authentication.
+   */
+  password?: string;
+}
+
+export declare interface ARCProxyConfig extends BaseProxyConfig {
+  /**
+   * When set, the configuration is also applied to the application requests (analytics, updates, etc.)
+   */
+  applyToApp?: boolean;
+  /**
+   * When set the application tries to read system setting for proxy and applies them instead the `url` configuration.
+   */
+  useSystemSettings?: boolean;
 }
