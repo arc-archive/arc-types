@@ -3,7 +3,9 @@ import { Variable } from "../models/Variable";
 import { ArcBaseRequest, ARCHistoryRequest, ARCSavedRequest, RequestConfig } from "../request/ArcRequest";
 import { WebsocketRequest, WebsocketStoredRequest } from "../request/WebSocket";
 import { Provider, ThingMeta } from "./Meta";
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface DomainWorkspaceAuthorization {
   /**
    * The OAuth 2 redirect URI to be used in the request editor instead the one 
@@ -16,14 +18,18 @@ export declare interface DomainWorkspaceAuthorization {
    */
   authorization?: any[];
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface DomainWorkspaceWebSession {
   /**
    * An URL of the endpoint that will be pre-filled in the "open login page" dialog.
    */
   webSessionUrl?: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface DomainWorkspace {
   /**
    * Auto generated uuid of the workspace. When not defined it is auto added to the workspace when first opened.
@@ -80,7 +86,9 @@ export declare interface DomainWorkspace {
    */
   webSession?: DomainWorkspaceWebSession;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface LegacyWorkspace {
   published?: string;
   description?: string;
@@ -92,5 +100,7 @@ export declare interface LegacyWorkspace {
   requests?: any[];
   variables: Variable[];
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare type WorkspaceRequestUnion = ArcBaseRequest | ARCSavedRequest | ARCHistoryRequest | WebsocketRequest | WebsocketStoredRequest;

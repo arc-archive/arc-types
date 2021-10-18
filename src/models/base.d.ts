@@ -1,3 +1,6 @@
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface Entity {
   /**
    * Pouch DB datastore `_id`
@@ -12,7 +15,9 @@ export declare interface Entity {
    */
   _deleted?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface DeletedEntity {
   /**
    * Pouch DB datastore `_id`
@@ -26,6 +31,7 @@ export declare interface DeletedEntity {
 
 /**
  * An entity change record base definition
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCEntityChangeRecord<T> {
   /**
@@ -49,6 +55,7 @@ export declare interface ARCEntityChangeRecord<T> {
 
 /**
  * Event detail object for data store query result object.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCModelListResultDetail<T> {
   result: Promise<ARCModelListResult<T>>;
@@ -56,6 +63,7 @@ export declare interface ARCModelListResultDetail<T> {
 
 /**
  * Base query options for the data store.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCModelListOptions {
   /**
@@ -70,6 +78,7 @@ export declare interface ARCModelListOptions {
 
 /**
  * Data store query result object.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCModelListResult<T> {
   /**

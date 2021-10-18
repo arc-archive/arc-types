@@ -1,6 +1,7 @@
 export declare type ActionType = 'request' | 'response';
 /**
  * A base interface describing a configuration to extract data from a request or a response.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface BaseCondition {
  /**
@@ -24,6 +25,7 @@ export declare interface BaseCondition {
 }
 /**
  * A configuration that extracts complex data from arrays.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface DataSourceConfiguration extends BaseCondition {
   /**
@@ -38,6 +40,7 @@ export declare interface DataSourceConfiguration extends BaseCondition {
 
 /**
  * Describes action's condition configuration.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface Condition extends DataSourceConfiguration {
   /**
@@ -60,6 +63,9 @@ export declare interface Condition extends DataSourceConfiguration {
   view?: ConditionViewOptions;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export interface ConditionViewOptions {
   /**
    * Whether the condition editor is rendered in the "full" view
@@ -72,6 +78,7 @@ export interface ConditionViewOptions {
  * An interface representing a runnable set of action in a condition.
  * For the actions to be executed the condition first has to be met.
  * The condition can be configured to always pass by setting the `alwaysPass` property.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface RunnableAction {
   /**
@@ -96,6 +103,7 @@ export declare interface RunnableAction {
 
 /**
  * An interface representing a single action.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface Action {
   /**
@@ -135,9 +143,13 @@ export declare interface Action {
 
 /**
  * Convenience type that gathers all configurations in one type.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export type ActionConfiguration = SetCookieConfig | SetVariableConfig | DeleteCookieConfig;
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface SetCookieConfig {
   /**
    * Name of the cookie
@@ -177,6 +189,9 @@ export declare interface SetCookieConfig {
   session?: boolean;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface SetVariableConfig {
   /**
    * Name of the variable to set
@@ -188,6 +203,9 @@ export declare interface SetVariableConfig {
   source: DataSourceConfiguration;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface DeleteCookieConfig {
   /**
    * When set it uses request URL instead of defined URL in the action.
@@ -208,6 +226,9 @@ export declare interface DeleteCookieConfig {
   name?: string;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface IteratorConfiguration {
   /**
    * The path to the property to use in the comparison.
@@ -223,12 +244,22 @@ export declare interface IteratorConfiguration {
   operator: OperatorEnum;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export type OperatorEnum = "equal" | "not-equal" | "greater-than" | "greater-than-equal" | "less-than" | "less-than-equal" | "contains" | "regex";
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export type RequestDataSourceEnum = "url" | "method" | "headers" | "body";
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export type ResponseDataSourceEnum = "url" | "status" | "headers" | "body";
 
 /**
  * An UI controlling configuration for an action.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ActionViewConfiguration {
   /**

@@ -1,5 +1,7 @@
 import { ApiType } from "../models/ApiTypes";
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface MultipartBody {
   /**
    * When true a this entry represent a file part
@@ -31,7 +33,9 @@ export declare interface MultipartBody {
    */
   size?: number;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface RawBody {
   /**
    * The last used body value.
@@ -50,7 +54,8 @@ export declare interface RawBody {
 /**
  * The body editor may produce multiple view models
  * for the UI. Each editor can store it's data in here
- * to restore it after opening a request,
+ * to restore it after opening a request.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface BodyMetaModel {
   /**
@@ -65,6 +70,7 @@ export declare interface BodyMetaModel {
 
 /**
  * Body editor meta data.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface BodyMeta {
   /**

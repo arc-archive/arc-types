@@ -2,6 +2,7 @@ import { Entity } from './base';
 
 /**
  * Represents a single certificate object (cert/key)
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface Certificate {
   /**
@@ -26,6 +27,7 @@ export declare interface Certificate {
 /**
  * Represents a complete certificate configuration required to make
  * a HTTP request.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface RequestCertificate {
  /**
@@ -44,6 +46,7 @@ export declare interface RequestCertificate {
 
 /**
  * Client certificate index definition for listings. 
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface CertificateIndex {
   /**
@@ -64,12 +67,14 @@ export declare interface CertificateIndex {
 /**
  * A base client certificate object used in ARC to create / list objects.
  * This is not a data entity but rather something used to outside of a context of a data store.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ClientCertificate extends RequestCertificate, CertificateIndex {
 }
 
 /**
  * Client certificate index datastore definition. For data entity use `ARCRequestCertificate` definition.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCCertificateIndex extends CertificateIndex, Entity {
   /**
@@ -83,6 +88,7 @@ export declare interface ARCCertificateIndex extends CertificateIndex, Entity {
 /**
  * The certificate object returned by the PouchDB store.
  * This is the data definition of a certificate data. For index entity use `ARCCertificateIndex` definition.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
  export declare interface ARCRequestCertificate extends RequestCertificate, Entity {
   

@@ -16,7 +16,7 @@ import { RequestCertificate } from '../models/ClientCertificate';
 export declare interface MultipartTransformer extends MultipartBody {}
 
 /**
- * The definition of the ARC base HTTP request object
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface HTTPRequest {
   /**
@@ -44,6 +44,7 @@ export declare interface HTTPRequest {
  * 
  * Another difference is that this headers contains a final list of headers sent to the 
  * server, including default headers, content-length, authorization, and so on.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface TransportRequest extends HTTPRequest {
   /**
@@ -63,6 +64,7 @@ export declare interface TransportRequest extends HTTPRequest {
 
 /**
  * ARC request `config` object.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface RequestConfig {
   /**
@@ -107,6 +109,7 @@ export declare interface RequestConfig {
 
 /**
  * Authorization configuration for the request.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface RequestAuthorization {
   /**
@@ -130,6 +133,7 @@ export declare interface RequestAuthorization {
 
 /**
  * URL editor meta data.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface UrlMeta {
   /**
@@ -144,6 +148,7 @@ export declare interface UrlMeta {
 
 /**
  * Headers editor meta data.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface HeadersMeta {
   /**
@@ -155,14 +160,18 @@ export declare interface HeadersMeta {
    */
   source?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface AuthMeta {
   /**
    * The index of the selected authorization method.
    */
   selected?: number;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ActionsMeta {
   /**
    * The index of the selected arc actions view.
@@ -172,6 +181,7 @@ export declare interface ActionsMeta {
 
 /**
  * UI configuration for the request.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface RequestUiMeta {
   /**
@@ -204,7 +214,9 @@ export declare interface RequestUiMeta {
    */
   response?: ResponseUiMeta;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ResponseUiMeta {
   /**
    * The list of activated panels in the response view.
@@ -215,7 +227,9 @@ export declare interface ResponseUiMeta {
    */
   selectedPanel?: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface RequestActions {
   /**
    * Actions to be executed before the request is sent to the transport library.
@@ -229,6 +243,7 @@ export declare interface RequestActions {
 
 /**
  * The definition of the ARC request that is shared in different contexts.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ArcBaseRequest extends HTTPRequest {
   /**
@@ -287,6 +302,7 @@ export declare interface ArcBaseRequest extends HTTPRequest {
 
 /**
  * A model of an ARC request that has been stored in the data store
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ArcStoredRequest extends ArcBaseRequest {
   /**
@@ -328,9 +344,12 @@ export declare interface ArcStoredRequest extends ArcBaseRequest {
 
 /**
  * The definition of the ARC request history data entity.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCHistoryRequest extends ArcStoredRequest, Entity {}
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCSavedRequest extends ArcStoredRequest, Entity {
   /**
    * The name of the request
@@ -348,6 +367,7 @@ export declare interface ARCSavedRequest extends ArcStoredRequest, Entity {
 
 /**
  * The definition of the ARC request in the request editor.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ArcEditorRequest {
   /**
@@ -359,7 +379,9 @@ export declare interface ArcEditorRequest {
    */
   request: ArcBaseRequest | ARCSavedRequest | ARCHistoryRequest;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCRequestRestoreOptions {
   /**
    * When set the payload is ignored from the request and the model returns `undefined.

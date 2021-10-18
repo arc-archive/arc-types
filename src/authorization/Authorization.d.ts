@@ -1,3 +1,6 @@
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export interface NtlmAuthLegacy {
   domain: string;
   username: string;
@@ -5,7 +8,9 @@ export interface NtlmAuthLegacy {
   url?: string;
   method: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export interface BasicAuthLegacy {
   username: string;
   password?: string;
@@ -15,6 +20,7 @@ export interface BasicAuthLegacy {
 /**
  * A configuration for the legacy ARC auth object on the request.
  * This object has been repriced in Q1 2020 wit OAS3 support release.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export interface LegacyAuth extends NtlmAuthLegacy, BasicAuthLegacy {
   type: string;
@@ -37,7 +43,9 @@ export interface BearerAuthorization {
    */
   token: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export interface NtlmAuthorization {
   /**
    * User name value.
@@ -52,7 +60,9 @@ export interface NtlmAuthorization {
    */
   domain: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export interface DigestAuthorization {
   username?: string;
   password?: string;
@@ -66,7 +76,9 @@ export interface DigestAuthorization {
   cnonce: string;
   algorithm: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export interface OAuth1Authorization {
   consumerKey: string;
   consumerSecret: string;
@@ -87,6 +99,7 @@ export interface OAuth1Authorization {
 
 /**
  * Client Certificate Authorization
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export interface CCAuthorization {
   /**
@@ -97,7 +110,9 @@ export interface CCAuthorization {
    */
   id: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface OAuth2CustomParameter {
   /**
    * The name of the parameter
@@ -108,7 +123,9 @@ export declare interface OAuth2CustomParameter {
    */
   value: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface OAuth2TokenRequestCustomData {
   /**
    * The query parameters to use with the token request
@@ -124,14 +141,18 @@ export declare interface OAuth2TokenRequestCustomData {
    */
   body?: OAuth2CustomParameter[];
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface OAuth2AuthorizationRequestCustomData {
   /**
    * The query parameters to add to the authorization URI
    */
   parameters?: OAuth2CustomParameter[];
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface OAuth2CustomData {
   /**
    * The custom data to set on the authorization URI when opening the auth popup.
@@ -142,7 +163,9 @@ export declare interface OAuth2CustomData {
    */
   token?: OAuth2TokenRequestCustomData;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 declare interface BaseOAuth2Authorization {
   /**
    * OAuth flow with `interactive` option set to `false` allows to quietly request for the token from the cache or form the authorization server
@@ -160,6 +183,7 @@ declare interface BaseOAuth2Authorization {
 
 /**
  * OAuth 2 configuration object used in Advanced REST Client and API Components.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface OAuth2Authorization extends BaseOAuth2Authorization {
   /**
@@ -287,6 +311,7 @@ export type OAuth2DeliveryMethod = 'header' | 'query' | 'body';
 
 /**
  * Options for removing the OAuth 2 token from the cache.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface TokenRemoveOptions {
   /**
@@ -300,7 +325,9 @@ export declare interface TokenRemoveOptions {
    */
   authorizationUri: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 declare interface TokenBase {
   /**
    * Whether the token request was marked as interactive.
@@ -314,6 +341,7 @@ declare interface TokenBase {
 
 /**
  * OAuth 2 token response object.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 declare interface TokenInfo extends TokenBase {
   /**
@@ -345,7 +373,9 @@ declare interface TokenInfo extends TokenBase {
    */
   refreshToken?: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 interface OidcToken {
   /**
    * The response type of the token.
@@ -356,7 +386,9 @@ interface OidcToken {
    */
   state: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export interface OidcTokenInfo extends OidcToken {
   /**
    * The timestamp when the token response was read.
@@ -395,7 +427,9 @@ export interface OidcTokenInfo extends OidcToken {
    */
   scope?: string[];
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export interface OidcTokenError extends OidcToken {
   /**
    * Whether the token has error when processing it. This is the error message to render to the user.
@@ -407,11 +441,17 @@ export interface OidcTokenError extends OidcToken {
   error?: string;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface Oauth2GrantType {
   type: string;
   label: string;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface Oauth2ResponseType {
   type: string;
   label: string;
@@ -419,6 +459,7 @@ export declare interface Oauth2ResponseType {
 
 /**
  * OpenID Connect configuration object used in Advanced REST Client and API Components.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface OidcAuthorization extends OAuth2Authorization {
   /**
@@ -452,6 +493,7 @@ export declare interface OidcAuthorization extends OAuth2Authorization {
 
 /**
  * Token response object.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 declare interface TokenError {
   /**
@@ -464,6 +506,9 @@ declare interface TokenError {
   code: string;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface AuthorizationParams {
   header?: Record<string, string>;
   query?: Record<string, string>;
@@ -473,12 +518,14 @@ export declare interface AuthorizationParams {
 
 /**
  * Authorization configuration for OAS' APiKey
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ApiKeyAuthorization extends AuthorizationParams {
 }
 
 /**
  * Authorization configuration for the PassThrough authorization
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface PassThroughAuthorization {
   /**
@@ -493,6 +540,7 @@ export declare interface PassThroughAuthorization {
 
 /**
  * Authorization configuration for RAML's custom scheme
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface RamlCustomAuthorization extends PassThroughAuthorization {
 }

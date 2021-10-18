@@ -1,5 +1,6 @@
 /**
  * A definition of a form item used in the UI.
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
  */
 export declare interface FormItem {
   /**
@@ -19,7 +20,9 @@ export declare interface FormItem {
    */
   schema?: FormItemSchema;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface AmfFormItem extends FormItem {
  /**
    * Property schema
@@ -30,7 +33,9 @@ export declare interface AmfFormItem extends FormItem {
    */
   properties?: any[];
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface FormItemSchema {
   /**
    * Whether the property is required. It is not by default.
@@ -89,7 +94,9 @@ export declare interface FormItemSchema {
    */
   readOnly?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 declare interface Example {
   /**
    * The example to render
@@ -129,7 +136,9 @@ declare interface Example {
    */
   isScalar: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface AmfFormItemSchema extends FormItemSchema {
   /**
    * Data type of the property

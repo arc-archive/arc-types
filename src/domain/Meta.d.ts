@@ -1,5 +1,6 @@
 /**
  * An interface describing a base metadata of a thing.
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
  */
 export declare interface ThingMeta {
   /**
@@ -30,6 +31,7 @@ export declare interface ThingMeta {
 
 /**
  * An interface describing a provider of a thing.
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
  */
 export declare interface Provider {
   /**

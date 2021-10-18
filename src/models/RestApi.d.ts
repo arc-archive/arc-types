@@ -1,5 +1,7 @@
 import { Entity } from './base';
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCRestApiIndex extends Entity {
   /**
    * API title
@@ -21,7 +23,9 @@ export declare interface ARCRestApiIndex extends Entity {
    * The latest added version name.
    */
   latest: string;
-}
+}/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 
 export declare interface ARCRestApi extends Entity {
   /**

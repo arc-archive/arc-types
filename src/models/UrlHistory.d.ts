@@ -1,5 +1,7 @@
 import { Entity } from './base';
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface UrlHistory {
  /**
    * A number of times the URL was used
@@ -18,11 +20,15 @@ export declare interface UrlHistory {
    */
   midnight: number;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCUrlHistory extends UrlHistory, Entity {
   
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCWebsocketUrlHistory extends UrlHistory, Entity {
   
 }

@@ -1,3 +1,6 @@
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface RequestEditorConfig {
   /** 
    * Automatically encodes and decodes values in the www-url-form-encoded body editor.
@@ -26,6 +29,7 @@ export declare interface RequestEditorConfig {
 
 /**
  * Description of the Advanced REST Client configuration.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCConfig {
   /**
@@ -64,6 +68,7 @@ export declare interface ARCConfig {
 
 /**
  * Description of the Advanced REST Client configuration.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCViewConfig {
   /**
@@ -85,6 +90,9 @@ export declare interface ARCViewConfig {
   fontSize?: number;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCRequestConfig {
   /**
    * The request default timeout setting.
@@ -142,7 +150,9 @@ export declare interface ARCRequestConfig {
    */
   readOsHosts?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCPrivacyConfig {
   /**
    * Whether the limited analytics data are collected.
@@ -163,7 +173,9 @@ export declare interface ARCPrivacyConfig {
    */
   exceptionsOnly?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCHistoryConfig {
   /**
    * Whether the HTTP requests history is enabled
@@ -175,7 +187,9 @@ export declare interface ARCHistoryConfig {
    */
   fastSearch?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCResponseConfig {
   /**
    * The size of a response that triggers "raw" view by default.
@@ -188,7 +202,9 @@ export declare interface ARCResponseConfig {
    */
   warningResponseMaxSize?: number;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCUpdaterConfig {
   /**
    * The release channel to use.
@@ -201,7 +217,9 @@ export declare interface ARCUpdaterConfig {
    */
   auto?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface BaseProxyConfig {
   /**
    * The URL of the proxy server to use. It can be an IP address (192.168.10.20), a FQDN (my.proxy.com) or a full URL (https://my.proxy.com).
@@ -217,7 +235,9 @@ export declare interface BaseProxyConfig {
    */
   password?: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCProxyConfig extends BaseProxyConfig {
   /**
    * When set, the configuration is also applied to the application requests (analytics, updates, etc.)

@@ -2,6 +2,7 @@ import { Entity } from './base';
 
 /**
  * ARC host rule definition.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface HostRule {
   /**
@@ -21,7 +22,9 @@ export declare interface HostRule {
    */
   comment?: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCHostRule extends HostRule, Entity {
   /**
    * The timestamp when the rule was updated the last time.

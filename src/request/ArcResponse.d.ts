@@ -2,6 +2,7 @@ import { MultipartBody } from "./RequestBody";
 
 /**
  * Schema definition for ARC request timings. This is mostly consistent with HAR timings.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface RequestTime {
   connect: number;
@@ -16,6 +17,7 @@ export declare interface RequestTime {
 /**
  * ARC transforms response body from ArrayBuffer or Buffer
  * to this structure to store it in the data store.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface TransformedPayload {
   /**
@@ -27,7 +29,9 @@ export declare interface TransformedPayload {
    */
   data: number[];
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface HTTPResponse {
   /**
    * The response status code
@@ -49,6 +53,7 @@ export declare interface HTTPResponse {
 
 /**
  * An information about a redirect
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ResponseRedirect {
   /**
@@ -72,7 +77,9 @@ export declare interface ResponseRedirect {
    */
   url: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface RequestsSize {
   /**
    * The size of the request in bytes
@@ -83,7 +90,9 @@ export declare interface RequestsSize {
    */
   response: number;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface BaseResponse extends HTTPResponse {
   /**
    * The ID of the request object used to trigger the response.
@@ -93,6 +102,7 @@ export declare interface BaseResponse extends HTTPResponse {
 
 /**
  * ARC response object.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface Response extends BaseResponse {
   /**
@@ -133,14 +143,18 @@ export declare interface Response extends BaseResponse {
    */
   auth?: ResponseAuth;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ErrorResponse extends BaseResponse {
   /**
    * An error associated with the response
    */
   error: Error;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ResponseAuth {
   /**
    * The requested by the authorization server authentication method

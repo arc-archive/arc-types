@@ -1,4 +1,8 @@
-# Advanced REST Client types definition
+# Deprecated
+
+This module has been  moved to `@advanced-rest-client/events`
+
+--------
 
 This module contains ARC's typed definitions for various data types.
 

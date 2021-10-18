@@ -2,6 +2,9 @@ import { Entity } from "../models/base";
 import { MultipartTransformer } from "./ArcRequest";
 import { RequestTime, TransformedPayload } from "./ArcResponse";
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface HistoryData extends Entity {
   timings: RequestTime;
   totalTime: number;
@@ -10,6 +13,10 @@ export declare interface HistoryData extends Entity {
   response: HistoryDataResponse;
   stats: HistoryDataStats;
 }
+
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface HistoryDataRequest {
   headers?: string;
   payload?: string | Buffer | ArrayBuffer | Blob | File | FormData;
@@ -29,18 +36,26 @@ export declare interface HistoryDataRequest {
    */
   blob?: string;
 }
+
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface HistoryDataResponse {
   statusCode: number,
   statusText?: string;
   headers?: string;
   payload: string | TransformedPayload;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface HistoryDataStat {
   headersSize: number;
   payloadSize: number;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface HistoryDataStats {
   request: HistoryDataStat;
   response: HistoryDataStat;

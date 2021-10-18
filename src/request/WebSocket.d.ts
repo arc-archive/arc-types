@@ -2,7 +2,9 @@ import { ApiType } from "../models/ApiTypes";
 import { RawBody } from './RequestBody';
 import { Entity } from '../models/base';
 import { TransformedPayload } from "./ArcResponse";
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface WebsocketRequest {
   kind: 'ARC#WebsocketRequest';
   /**
@@ -25,7 +27,9 @@ export declare interface WebsocketRequest {
    */
   blob?: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface WebsocketRequestUiMeta {
   /**
    * Body editor meta
@@ -37,6 +41,7 @@ export declare interface WebsocketRequestUiMeta {
  * The websocket body editor may produce multiple view models
  * for the UI. Each editor can store it's data in here
  * to restore it after opening a request,
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface BodyMetaModel {
   /**
@@ -48,14 +53,18 @@ export declare interface BodyMetaModel {
    */
   viewModel: (ApiType | RawBody)[];
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface WebsocketBodyUiMeta {
   /**
    * The selected editor
    */
   selected?: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface WebsocketStoredRequest extends WebsocketRequest, Entity {
   /**
    * Timestamp when the request was last updated.
@@ -70,7 +79,9 @@ export declare interface WebsocketStoredRequest extends WebsocketRequest, Entity
    */
   name?: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface WebsocketEditorRequest {
   /**
    * The auto generated ID of the request in the editor.
@@ -81,7 +92,9 @@ export declare interface WebsocketEditorRequest {
    */
   request: WebsocketRequest | WebsocketStoredRequest;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface WebsocketLog {
   /**
    * The direction the message went to.
@@ -106,7 +119,9 @@ export declare interface WebsocketLog {
    */
   blob?: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface WebsocketConnectionResult {
   /**
    * The total size of the transmitted data in both directions in this connection

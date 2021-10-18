@@ -1,3 +1,6 @@
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface IndexableRequest {
   /**
    * stored request ID
@@ -12,7 +15,9 @@ export declare interface IndexableRequest {
    */
   url: string;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface IndexQueryOptions {
   /**
    * Request type: `saved` or `history`
@@ -24,7 +29,9 @@ export declare interface IndexQueryOptions {
    */
   detailed?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface IndexQueryResult {
   [key: string]: string;
 }

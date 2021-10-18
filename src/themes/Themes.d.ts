@@ -1,3 +1,6 @@
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ArcThemeStore {
   /**
    * The version of this scheme
@@ -18,7 +21,9 @@ export declare interface ArcThemeStore {
    */
   systemPreferred?: boolean;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface InstalledTheme {
   /**
    * The internal identifier used by the theme.

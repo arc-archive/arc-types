@@ -6,7 +6,9 @@ import { ARCVariable } from '../models/Variable';
 import { ARCProject } from '../models/Project';
 import { ARCCertificateIndex, ARCClientCertificate, Certificate } from '../models/ClientCertificate';
 import { ARCCookie } from '../cookies/Cookies';
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface EncryptionOptions {
   /**
    * When set it encrypts the data before export.
@@ -19,7 +21,9 @@ export declare interface EncryptionOptions {
    */
   passphrase?: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ProviderOptions {
   /**
    * Export file name or path to render in the save dialog or file name
@@ -37,7 +41,9 @@ export declare interface ProviderOptions {
    */
   contentType?: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportOptions extends EncryptionOptions {
   /**
    * Name of the export provider.
@@ -56,14 +62,18 @@ export declare interface ExportOptions extends EncryptionOptions {
    */
   kind?: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 declare interface ExportOptionsInternal extends ExportOptions {
   /**
    * The application version used to generate the export
    */
   appVersion: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ArcNativeDataExport {
   authdata?: boolean | ARCAuthData[];
   clientcertificates?: boolean;
@@ -76,9 +86,13 @@ export declare interface ArcNativeDataExport {
   websocketurlhistory?: boolean | ARCWebsocketUrlHistory[];
   urlhistory?: boolean | ARCUrlHistory[];
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare const ExportKey: keyof ArcNativeDataExport;
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ArcLegacyNativeDataExport extends ArcNativeDataExport {
   'websocket-url-history': boolean | ARCWebsocketUrlHistory[];
   'auth-data': boolean | ARCAuthData[];
@@ -86,7 +100,9 @@ export declare interface ArcLegacyNativeDataExport extends ArcNativeDataExport {
   'host-rules': boolean | ARCHostRule[];
   'client-certificates': boolean | ARCVariable[];
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ArcExportResult {
   /**
    * Whether an export operation was a success
@@ -108,7 +124,9 @@ export declare interface ArcExportResult {
    */
   fileId: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportEntity {
   /**
    * The object kind
@@ -120,19 +138,48 @@ export declare interface ExportEntity {
    */
   key: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcSavedRequest extends ARCSavedRequest, ExportEntity {}
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcHistoryRequest extends ARCHistoryRequest, ExportEntity {}
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcProjects extends ARCProject, ExportEntity {}
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcWebsocketUrl extends ARCWebsocketUrlHistory, ExportEntity {}
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcUrlHistory extends ARCUrlHistory, ExportEntity {}
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcHostRule extends ARCHostRule, ExportEntity {}
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcVariable extends ARCVariable, ExportEntity {}
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcAuthData extends ARCAuthData, ExportEntity {}
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcClientCertificateData extends ExportEntity, ARCCertificateIndex {
   cert?: Certificate | Certificate[];
   pKey?: Certificate | Certificate[];
 }
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ExportArcCookie extends ARCCookie {
   /**
    * The object kind
@@ -143,7 +190,9 @@ export declare interface ExportArcCookie extends ARCCookie {
    */
   key?: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ArcExportObject {
   createdAt: string;
   version: string;
@@ -164,11 +213,16 @@ export declare interface ArcExportObject {
   variables?: ExportArcVariable[];
   authdata?: ExportArcAuthData[];
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ArcExportProcessedData {
   key: keyof ArcNativeDataExport;
   data: any[];
 }
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export declare interface ArcExportClientCertificateData {
   item: ARCCertificateIndex;
   data: ARCClientCertificate;

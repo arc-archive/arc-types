@@ -1,5 +1,8 @@
 import { Entity } from './base';
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface Project {
   /**
    * Project order
@@ -28,5 +31,8 @@ export declare interface Project {
   error?: boolean;
 }
 
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ARCProject extends Project, Entity {
 }

@@ -1,5 +1,7 @@
 import { Entity } from './base';
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare class ApiHttpUrl {
   /**
    * The value of the URL.
@@ -18,7 +20,9 @@ export declare class ApiHttpUrl {
    */
   query?: ApiType[];
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface EntityTiming {
   /**
    * Timestamp when the project was last updated.
@@ -34,7 +38,9 @@ export declare interface EntityTiming {
    */
   midnight?: number;
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ApiServerVariable {
   /**
    * The variable name.
@@ -56,6 +62,7 @@ export declare interface ApiServerVariable {
 
 /**
  * A definition of an API server. This is used in the API project to define a base URI for each request.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ApiServer {
   /**
@@ -72,6 +79,7 @@ export declare interface ApiServer {
 
 /**
  * The definition of a project folder structure.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCProjectFolder extends EntityTiming {
   /**
@@ -99,6 +107,7 @@ export declare interface ARCProjectFolder extends EntityTiming {
 
 /**
  * The new definition of the ARC project that is an API project.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ARCApiProject extends Entity, ARCProjectFolder {
   /**
@@ -110,7 +119,9 @@ export declare interface ARCApiProject extends Entity, ARCProjectFolder {
    */
   servers?: ApiServer[];
 }
-
+/**
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
+ */
 export declare interface ApiType {
   /**
    * Property name
@@ -148,6 +159,7 @@ export declare interface ApiType {
 
 /**
  * The definition of the API request HTTP properties.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface ApiHttpRequest {
   /**
@@ -167,6 +179,7 @@ export declare interface ApiHttpRequest {
 /**
  * An API request object is an entity that only exists inside an API project.
  * The reference is created in an API folder.
+ * @deprecated This module has been  moved to `@advanced-rest-client/events`
  */
 export declare interface APIRequest extends EntityTiming, Entity {
   /**

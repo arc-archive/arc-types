@@ -1,5 +1,6 @@
 /**
  * A model of a cookie object used by the Advanced REST Client.
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
  */
 export interface ARCCookie {
   /**
@@ -49,7 +50,9 @@ export interface ARCCookie {
    */
   expires?: number;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export interface ElectronCookie {
   // Docs: http://electronjs.org/docs/api/structures/cookie
 
@@ -94,7 +97,9 @@ export interface ElectronCookie {
    */
   value: string;
 }
-
+/**
+ * @deprecated This module has been moved to `@advanced-rest-client/events`
+ */
 export interface ElectronCookieChangeRecord {
   /**
    * The cookie that was changed.
